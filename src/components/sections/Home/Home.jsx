@@ -1,5 +1,5 @@
 import React from "react";
-import Name from "./components/name";
+import Name from "./components/Name";
 import Contact from "./components/Contact";
 import Tabs from "./components/Tabs";
 
