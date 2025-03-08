@@ -13,6 +13,7 @@ const Tabs = () => {
 
   const handleTabClick = (name) => {
     navigate(`/${name}`);
+    const tabsElement = document.getElementById("tabs");
     tabsElement && tabsElement.scrollIntoView({ behavior: "smooth" });
   };
 
