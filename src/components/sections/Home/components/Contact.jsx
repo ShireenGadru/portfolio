@@ -12,13 +12,7 @@ const Contact = () => {
       </div>
 
       <div className="flex justify-center flex-col items-center">
-        <a
-          href="#contact"
-          className="border w-fit border-blue-500/50 text-blue-500 py-3 px-6 rounded font-medium transition-all duration-500 hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.2)] hover:bg-gradient-to-r hover:from-blue-500/90 hover:to-indigo-600/90 hover:text-white"
-        >
-          Contact Me
-        </a>
-        <div className="mt-5 flex gap-4 justify-center items-center">
+        <div className="flex gap-4 justify-center items-center">
           <div className="relative group">
             <a
               href="https://www.linkedin.com/in/shireengadru/"
