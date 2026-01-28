@@ -1,61 +1,62 @@
 import React from "react";
-import { FaGithub } from "react-icons/fa";
 import { RevealOnScroll } from "../../utils/RevealOnScroll";
+
+const workExperience = [
+  {
+    title: "Frontend Developer",
+    company: "Soulax",
+    period: "2025 – Present",
+    points: [
+      "Built and scaled complex frontend systems using React, TypeScript, and Google Maps APIs",
+      "Implemented advanced geofencing features (polygons, circles, rectangles) with editing, merging, and rich interactions",
+      "Optimized rendering and interactions for thousands of map objects to ensure smooth zooming and panning",
+      "Worked on a GenAI-powered data analytics application enabling natural-language queries to generate SQL, tables, and charts",
+      "Implemented UI workflows for model and schema selection, query execution, and saving results to dashboards and widgets",
+      "Refactored shared map and drawing logic to improve performance, reuse, and maintainability",
+      "Contributed to frontend architecture and mentored junior developers"
+    ]
+  },
+  {
+    title: "Project Engineer",
+    company: "Wipro",
+    period: "2021 – 2025",
+    points: [
+      "Developed and maintained large client-facing React applications",
+      "Worked on state management, API integration, and component architecture",
+      "Performed performance optimizations and refactoring in production codebases",
+      "Wrote and maintained unit tests and supported CI/CD pipelines",
+      "Collaborated with cross-functional teams to deliver features at scale"
+    ]
+  },
+];
+
 
 const Work = () => {
   return (
     <RevealOnScroll>
-      <div className="max-w-3xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-          My Work Experience
-        </h2>
-        <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all flex justify-center items-center flex-col text-gray-200">
-          <h3 className="text-xl font-semibold">
-            <span className="bg-gradient-to-r from-purple-300 to-pink-200 bg-clip-text text-transparent">
-              {" "}
-              Wipro Digital
-            </span>{" "}
-            (2021 - Present)
-          </h3>
-          <p className="text-white/50 my-4">FRONTEND DEVELOPER</p>
-          <ul className="list-disc list-outside mt-4 space-y-2">
-            <li>
-              <strong className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
-                Tech Stack:
-              </strong>{" "}
-              React.js, TypeScript, Css, Sass, Jest, Git
-            </li>
-            <li>
-              <strong className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
-                Feature Development:
-              </strong>{" "}
-              Increased conversion rates by 30%
-            </li>
-            <li>
-              <strong className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
-                UI & Performance:
-              </strong>{" "}
-              Built reusable components, optimized load speed
-            </li>
-            <li>
-              <strong className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
-                Testing & Quality:
-              </strong>{" "}
-              Wrote Jest tests, conducted code reviews
-            </li>
-            <li>
-              <strong className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
-                Accessibility:
-              </strong>{" "}
-              Ensured accessibility compliance
-            </li>
-            <li>
-              <strong className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
-                Agile Development:
-              </strong>{" "}
-              Worked in a Scrum-based environment
-            </li>
-          </ul>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 min-h-screen">
+        <div className="space-y-6 sm:space-y-8">
+          {workExperience.map((job, index) => (
+            <div key={index} className="border-l-2 border-cyan-400/50 pl-4 sm:pl-6 pb-6 sm:pb-8">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-1 sm:gap-0">
+                <h3 className="text-lg sm:text-xl font-semibold text-white">
+                  {job.title}
+                </h3>
+                <span className="text-gray-400 text-xs sm:text-sm whitespace-nowrap sm:ml-4">
+                  {job.period}
+                </span>
+              </div>
+              <p className="text-cyan-400 mb-3 sm:mb-4 text-sm sm:text-base">{job.company}</p>
+              <ul className="space-y-2 text-gray-400 text-sm sm:text-base">
+                {job.points.map((point, pointIndex) => (
+                  <li key={pointIndex} className="pl-5 relative leading-relaxed">
+                    <span className="text-cyan-400 absolute left-0 top-0">•</span>
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </RevealOnScroll>

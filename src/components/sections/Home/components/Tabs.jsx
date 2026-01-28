@@ -13,24 +13,47 @@ const Tabs = () => {
 
   const handleTabClick = (name) => {
     navigate(`/${name}`);
-    const tabsElement = document.getElementById("tabs");
-    tabsElement && tabsElement.scrollIntoView({ behavior: "smooth" });
+    // Delay scroll to ensure navigation completes and DOM updates
+    setTimeout(() => {
+      const tabsElement = document.getElementById("tabs");
+      if (tabsElement) {
+        tabsElement.scrollIntoView({ 
+          behavior: "smooth", 
+          block: "start",
+          inline: "nearest"
+        });
+      }
+    }, 100);
   };
 
   useEffect(() => {
     if (currentRoute === "") return;
     const activeIndex = tabs.findIndex((tab) => tab.name === currentRoute);
     const overlay = document.getElementById("overlay");
-    const x = isMobile ? 83 : 124;
-    overlay.style.transform = `translateX(${x * activeIndex}px)`;
-  }, [currentRoute]);
+    if (overlay) {
+      const buttonWidth = isMobile ? 68 : 98;
+      const gap = isMobile ? 2 : 4;
+      const x = (buttonWidth + gap) * activeIndex;
+      overlay.style.transform = `translateX(${x}px)`;
+    }
+    
+    // Scroll to tabs section when route changes
+    const tabsElement = document.getElementById("tabs");
+    if (tabsElement) {
+      tabsElement.scrollIntoView({ 
+        behavior: "smooth", 
+        block: "start",
+        inline: "nearest"
+      });
+    }
+  }, [currentRoute, isMobile]);
 
   return (
-    <nav className="flex justify-center p-4 mt-[100px]" id="tabs">
-      <div className="relative flex gap-1 border border-white/15 rounded-full p-1 justify-center items-center">
+    <nav className="flex justify-center sm:justify-start mt-6 sm:mt-12 mb-4 scroll-mt-2" id="tabs">
+      <div className="relative flex gap-0.5 sm:gap-1 bg-gray-800/60 backdrop-blur-lg rounded-full p-1.5 sm:p-2 justify-center items-center overflow-x-auto border border-gray-700/50 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
         <div
           id="overlay"
-          className="cursor-pointer absolute top-1 left-1 h-[35px] sm:h-[39px] w-[80px] sm:w-[119px] bg-gradient-to-r from-blue-500/20 to-blue-800/20 border border-blue-900 rounded-full transition-all duration-400 shadow-blue-500/30"
+          className="cursor-pointer absolute top-1.5 sm:top-2 left-1.5 sm:left-2 h-[34px] sm:h-[42px] w-[68px] sm:w-[98px] bg-cyan-500 rounded-full transition-all duration-400"
         />
 
         {tabs.map((tab) => {
@@ -38,7 +61,7 @@ const Tabs = () => {
             <button
               key={tab.name}
               onClick={() => handleTabClick(tab.name)}
-              className={`py-2 sm:px-5 text-sm sm:text-base rounded-full w-[80px] sm:w-[120px]  duration-300 cursor-pointer text-gray-200 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-blue-800/20`}
+              className={`py-2 px-2 sm:px-3 text-xs sm:text-base rounded-full w-[68px] sm:w-[98px] duration-300 cursor-pointer text-gray-100 hover:text-white z-10 relative whitespace-nowrap font-medium flex items-center justify-center`}
             >
               {tab.label}
             </button>

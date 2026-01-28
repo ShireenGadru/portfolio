@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { fullName } from "../../../../utils/constants";
+import { fullName, role } from "../../../../utils/constants";
 
 const Name = () => {
   const [name, setName] = useState("");
@@ -22,14 +22,19 @@ const Name = () => {
   }, []);
 
   return (
-    <h1 className="text-5xl md:text-7xl font-bold mb-3 bg-gradient-to-r  from-blue-400 to-violet-400 leading-right bg-clip-text text-transparent transition-all duration-300">
-      {name}
-      {!isNameRendered && (
-        <span className="animate-blink text-white font-extralight text-6xl ml-2">
-          |{" "}
-        </span>
-      )}
-    </h1>
+    <div>
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white transition-all duration-300">
+        {name}
+        {!isNameRendered && (
+          <span className="animate-blink text-white font-extralight text-5xl sm:text-6xl ml-2">
+            |{" "}
+          </span>
+        )}
+      </h1>
+      <div className="uppercase text-cyan-400 text-sm sm:text-base mt-3 sm:mt-4 tracking-wider">
+        {role}
+      </div>
+    </div>
   );
 };
 
