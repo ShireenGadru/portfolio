@@ -3,25 +3,18 @@ import { RevealOnScroll } from "../../utils/RevealOnScroll";
 
 const Skills = () => {
   const skills = [
-    "JavaScript",
-    "TypeScript",
-    "React.js",
-    "React Hooks",
-    "Redux",
-    "Node.js",
-    "Next.js",
-    "HTML/CSS",
-    "Sass/Less",
-    "Tailwind CSS",
-    "Webpack",
-    "Jest",
-    "React Query",
-    "NPM",
-    "Git",
-    "GitHub",
-    "REST APIs",
-    "Optimization",
-    "Scaling",
+    { name: "React.js", color: "#61DAFB" },
+    { name: "Next.js", color: "#FFFFFF" },
+    { name: "JavaScript", color: "#F7DF1E" },
+    { name: "TypeScript", color: "#3178C6" },
+    { name: "Redux", color: "#764ABC" },
+    { name: "HTML/CSS", color: "#E34F26" },
+    { name: "Sass/Less", color: "#CC6699" },
+    { name: "Tailwind CSS", color: "#06B6D4" },
+    { name: "Jest", color: "#C21325" },
+    { name: "React Query", color: "#FF4154" },
+    { name: "Git", color: "#F05032" },
+    { name: "REST APIs", color: "#009688" },
   ];
 
   return (
@@ -34,9 +27,10 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <span
               key={index}
-              className="px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 bg-gray-800/50 hover:bg-gray-700/50 border border-gray-700 rounded-full text-gray-200 text-xs sm:text-sm font-medium transition-all duration-200"
+              className="px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 bg-gray-800/50 hover:bg-gray-700/50 border rounded-full text-gray-200 text-xs sm:text-sm font-medium transition-all duration-200"
+              style={{ borderColor: skill.color }}
             >
-              {skill}
+              {skill.name}
             </span>
           ))}
         </div>

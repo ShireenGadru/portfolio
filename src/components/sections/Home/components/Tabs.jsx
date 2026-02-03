@@ -1,19 +1,13 @@
 import React, { useEffect} from "react";
 import { tabs } from "../../../../utils/constants";
-import { useLocation, useNavigate } from "react-router-dom";
 import useWindowWidth from "../../../../hooks/useWindowWidth";
 
-const Tabs = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const currentRoute = location.pathname.replace("/", "");
-  const tabsElement = document.getElementById("tabs");
-
+const Tabs = ({ activeTab, setActiveTab }) => {
   const isMobile = useWindowWidth(640);
 
   const handleTabClick = (name) => {
-    navigate(`/${name}`);
-    // Delay scroll to ensure navigation completes and DOM updates
+    setActiveTab(name);
+    // Delay scroll to ensure DOM updates
     setTimeout(() => {
       const tabsElement = document.getElementById("tabs");
       if (tabsElement) {
@@ -27,26 +21,15 @@ const Tabs = () => {
   };
 
   useEffect(() => {
-    if (currentRoute === "") return;
-    const activeIndex = tabs.findIndex((tab) => tab.name === currentRoute);
+    const activeIndex = tabs.findIndex((tab) => tab.name === activeTab);
     const overlay = document.getElementById("overlay");
-    if (overlay) {
+    if (overlay && activeIndex !== -1) {
       const buttonWidth = isMobile ? 68 : 98;
       const gap = isMobile ? 2 : 4;
       const x = (buttonWidth + gap) * activeIndex;
       overlay.style.transform = `translateX(${x}px)`;
     }
-    
-    // Scroll to tabs section when route changes
-    const tabsElement = document.getElementById("tabs");
-    if (tabsElement) {
-      tabsElement.scrollIntoView({ 
-        behavior: "smooth", 
-        block: "start",
-        inline: "nearest"
-      });
-    }
-  }, [currentRoute, isMobile]);
+  }, [activeTab, isMobile]);
 
   return (
     <nav className="flex justify-center sm:justify-start mt-6 sm:mt-12 mb-6 sm:mb-12 scroll-mt-2" id="tabs">

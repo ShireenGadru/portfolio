@@ -3,7 +3,7 @@ import Name from "./components/Name";
 import Contact from "./components/Contact";
 import Tabs from "./components/Tabs";
 
-export const Home = () => {
+export const Home = ({ activeTab, setActiveTab }) => {
   return (
     <section
       id="home"
@@ -11,13 +11,13 @@ export const Home = () => {
     >
       <div className="z-10">
         <Name />
-        <div className="animate-slide-up opacity-0">
+        <div className="animate-slide-up">
           <p className="text-gray-400 text-base sm:text-lg mt-4 sm:mt-6 mb-6 sm:mb-8 leading-relaxed">
           Frontend-focused full-stack developer with 4+ years of experience building complex, high-performance web applications in React, TypeScript, and modern JavaScript ecosystems.
         
           </p>
           <Contact />
-          <Tabs />
+          <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
         </div>
       </div>
     </section>
