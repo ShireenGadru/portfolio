@@ -31,7 +31,7 @@ const Name = () => {
           </span>
         )}
       </h1>
-      <div className="uppercase text-cyan-400 text-sm sm:text-base mt-3 sm:mt-4 tracking-wider">
+      <div className="uppercase text-[#a855f7] text-sm sm:text-base mt-3 sm:mt-4 tracking-wider">
         {role}
       </div>
     </div>

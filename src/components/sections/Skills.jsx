@@ -3,18 +3,25 @@ import { RevealOnScroll } from "../../utils/RevealOnScroll";
 
 const Skills = () => {
   const skills = [
-    "React",
+    "JavaScript",
     "TypeScript",
+    "React.js",
+    "React Hooks",
+    "Redux",
     "Node.js",
     "Next.js",
+    "HTML/CSS",
+    "Sass/Less",
     "Tailwind CSS",
-    "shadcn/ui",
+    "Webpack",
+    "Jest",
     "React Query",
-    "PostgreSQL",
-    "MongoDB",
-    "Docker",
+    "NPM",
     "Git",
+    "GitHub",
     "REST APIs",
+    "Optimization",
+    "Scaling",
   ];
 
   return (

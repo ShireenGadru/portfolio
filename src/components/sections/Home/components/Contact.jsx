@@ -12,7 +12,7 @@ const Contact = () => {
               href="https://www.linkedin.com/in/shireengadru/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-cyan-400 text-xl sm:text-2xl transition-colors"
+              className="text-gray-400 hover:text-[#a855f7] text-xl sm:text-2xl transition-colors"
             >
               <FaLinkedin />
             </a>
@@ -27,7 +27,7 @@ const Contact = () => {
               href="https://github.com/ShireenGadru"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-cyan-400 text-xl sm:text-2xl transition-colors"
+              className="text-gray-400 hover:text-[#a855f7] text-xl sm:text-2xl transition-colors"
             >
               <FaGithub />
             </a>
@@ -41,7 +41,7 @@ const Contact = () => {
             <a
               href="mailto:shiru411@gmail.com"
               target="_blank"
-              className="text-gray-400 hover:text-cyan-400 text-xl sm:text-2xl transition-colors"
+              className="text-gray-400 hover:text-[#a855f7] text-xl sm:text-2xl transition-colors"
             >
               <FaEnvelope />
             </a>
@@ -55,7 +55,7 @@ const Contact = () => {
               href="https://leetcode.com/shireengadru"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-cyan-400 text-xl sm:text-2xl transition-colors"
+              className="text-gray-400 hover:text-[#a855f7] text-xl sm:text-2xl transition-colors"
             >
               <SiLeetcode />
             </a>
@@ -66,7 +66,7 @@ const Contact = () => {
         </div>
 
         <div className="flex items-center gap-2 text-gray-400 text-sm sm:text-base">
-          <FaMapMarkerAlt className="text-cyan-400" />
+          <FaMapMarkerAlt className="text-[#a855f7]" />
           <span>Hyderabad, India</span>
         </div>
       </div>
