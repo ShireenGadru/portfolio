@@ -3,7 +3,7 @@ import { RevealOnScroll } from "../../utils/RevealOnScroll";
 
 const workExperience = [
   {
-    title: "Frontend Developer",
+    title: "Software Developer",
     company: "Soulax",
     period: "2025 – Present",
     points: [
@@ -17,7 +17,7 @@ const workExperience = [
     ]
   },
   {
-    title: "Project Engineer",
+    title: "Frontend Developer",
     company: "Wipro",
     period: "2021 – 2025",
     points: [
